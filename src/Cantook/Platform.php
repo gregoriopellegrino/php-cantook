@@ -36,6 +36,8 @@
 			//prepare url
 			$filter = Config::$services[$service]["parameters_in_url"];
 			$parameters_in_url = array_intersect_key($data, $filter);
+			ksort($parameters_in_url);
+			ksort($filter);
 			$url = str_replace($filter, $parameters_in_url, Config::$services[$service]["url"]);
 			
 			//request
@@ -51,7 +53,7 @@
 				->expects("plain")
 				->send();                                   					// and finally, fire that thing off!
 			
-			$message = ($response->code != 200) ? json_decode($response->body)[0] : "success";
+			$message = ($response->code != 200) ? json_decode($response->body)[0] : $response->body;
 			
 			return array("url" => $response->request->uri, "code" => $response->code, "response" => $message);
 		}
