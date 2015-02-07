@@ -1,0 +1,19 @@
+{
+    "name": "gregoriopellegrino/php-cantook",
+    "description": "A PHP wrapper for Cantook (and Edigita) API for ebook sales",
+    "require": {
+        "nategood/httpful": "*"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Gregorio Pellegrino",
+            "email": "gregorio.pellegrino@effata.it"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Cantook": "src/"
+        }
+    }
+}
