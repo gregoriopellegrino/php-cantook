@@ -6,7 +6,7 @@ You can install throu Composer. Simply add "gregoriopellegrino/php-cantook" in y
 ```json
 {
     "require": {
-        "nategood/httpful": "*"
+        "gregoriopellegrino/php-cantook": "*"
     }
 }
 ```
