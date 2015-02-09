@@ -11,7 +11,7 @@ You can install throu Composer. Simply add "gregoriopellegrino/php-cantook" in y
 }
 ```
 
-## Using
+## Usage
 You can find some code in the file test/test.php.
 
 ### Simulate a sale
