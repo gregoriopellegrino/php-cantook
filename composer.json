@@ -2,6 +2,7 @@
     "name": "gregoriopellegrino/php-cantook",
     "description": "A PHP wrapper for Cantook (and Edigita) API for ebook sales",
     "require": {
+    	"php": ">=5.3.0",
         "nategood/httpful": "*"
     },
     "license": "MIT License",
