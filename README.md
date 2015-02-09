@@ -2,11 +2,11 @@
 A PHP wrapper for Cantook (and Edigita) API for ebook sales. API specifications: http://help.cantook.net/support/solutions/articles/4000034849-the-web-services#2
 
 ## Installing
-You can install throu Composer. Simply add "gregoriopellegrino/php-cantook" in your composer.json file like below.
+You can install through Composer. Simply add "gregoriopellegrino/php-cantook" in your composer.json file like below.
 ```json
 {
     "require": {
-        "gregoriopellegrino/php-cantook": "*"
+                "gregoriopellegrino/php-cantook": "dev-master"
     }
 }
 ```
