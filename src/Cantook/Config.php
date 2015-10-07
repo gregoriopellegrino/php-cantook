@@ -26,7 +26,7 @@
 					"isbn" => "%isbn%"
 				),
 				"parameters" => array(
-					"format", "cost", "protection", "customer_id", "transaction_id", "credit_card_prefix", "sale_state", "country", "aggregator", "uname"
+					"format", "cost", "protection", "customer_id", "transaction_id", "credit_card_prefix", "sale_state", "country", "aggregator", "uname", "currency"
 				)
 			),
 	

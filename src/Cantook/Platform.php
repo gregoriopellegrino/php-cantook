@@ -6,13 +6,14 @@
 		private $platform = null;
 		private $username = null;
 		private $password = null;
-		private $organisation_id = null;
+		private $data = array();
 
-		public function __construct($platform, $username, $password, $organisation_id) {
+		public function __construct($platform, $username, $password, $organisation_id, $country) {
 			$this->platform = $platform;
 			$this->username = $username;
 			$this->password = $password;
-			$this->organisation_id = $organisation_id;
+			$this->data["organisation_id"] = $organisation_id;
+			$this->data["country"] = $country;
 		}
 		
 		public function __get($property) {
@@ -25,7 +26,7 @@
 		}
 		
 		public function callService($service, $publication, $transaction = null) {
-			$data = array("organisation_id" => $this->organisation_id);
+			$data = $this->data;
 			if(isset($publication)) $data = array_merge($data, $publication->toArray());
 			if(isset($transaction)) $data = array_merge($data, $transaction->toArray());
 			
@@ -39,7 +40,7 @@
 			ksort($parameters_in_url);
 			ksort($filter);
 			$url = str_replace($filter, $parameters_in_url, Config::$services[$service]["url"]);
-			
+						
 			//request
 			return $this->makeRequest($url, Config::$services[$service]["method"], $parameters);
 		}
@@ -53,7 +54,8 @@
 				->expects("plain")
 				->send();                                   					// and finally, fire that thing off!
 			
-			$message = ($response->code != 200) ? json_decode($response->body)[0] : $response->body;
+			$message = $response->body;
+			//$message = ($response->code != 200) ? json_decode($response->body)[0] : $response->body;
 			
 			return array("url" => $response->request->uri, "code" => $response->code, "response" => $message);
 		}

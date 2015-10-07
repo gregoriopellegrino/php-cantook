@@ -6,11 +6,12 @@
 		private $data = array();
 		private $fields = array("isbn", "format", "cost", "protection", "cost_without_taxes", "price_type", "currency");
 
-		public function __construct($isbn, $format, $cost, $protection) {
+		public function __construct($isbn, $format, $cost, $protection, $currency) {
 			$this->isbn = $isbn;
 			$this->format = $format;
 			$this->cost = $cost;
 			$this->protection = $protection;
+			$this->currency = $currency;
 		}
 		
 		public function __get($property) {
