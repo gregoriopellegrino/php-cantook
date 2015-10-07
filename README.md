@@ -16,15 +16,15 @@ You can find some code in the file test/test.php.
 
 ### Simulate a sale
 ```php
-$platform = new Platform("https://edigita.cantook.net", "username", "password", 310);
-$publication = new Publication("9788874028047", "epub", 2.99, "none");
+$platform = new Platform("https://edigita.cantook.net", "username", "password", 310, "ita");
+$publication = new Publication("9788874028047", "epub", 2.99, "none", "EUR");
 $response = $platform->callService("simulation", $publication);
 ```
 
 ### Sale
 ```php
-$platform = new Platform("https://edigita.cantook.net", "username", "password", 310);
-$publication = new Publication("9788874028047", "epub", 2.99, "none");
+$platform = new Platform("https://edigita.cantook.net", "username", "password", 310, "ita");
+$publication = new Publication("9788874028047", "epub", 2.99, "none", "EUR");
 $transaction = new Transaction("123456", "123456", "Gregorio Pellegrino");
 $transaction->sale_state = "test";
 $response = $platform->callService("sale", $publication, $transaction);
@@ -32,8 +32,8 @@ $response = $platform->callService("sale", $publication, $transaction);
 
 ### Download
 ```php
-$platform = new Platform("https://edigita.cantook.net", "username", "password", 310);
-$publication = new Publication("9788874028047", "epub", 2.99, "none");
+$platform = new Platform("https://edigita.cantook.net", "username", "password", 310, "ita");
+$publication = new Publication("9788874028047", "epub", 2.99, "none", "EUR");
 $transaction = new Transaction("123456", "123456", "Gregorio Pellegrino");
 $transaction->sale_state = "test";
 $response = $platform->callService("download", $publication, $transaction);
